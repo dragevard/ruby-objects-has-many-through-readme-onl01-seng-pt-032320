@@ -19,16 +19,16 @@ class Customer
   end
   
   def meals
-    Meal.all.select do |meal|
-      meal.customer == self 
-    end 
-  end 
-  
-  def waiters
-    meals.map do |meal|
-      meal.waiter 
-    end 
-  end 
+  Meal.all.select do |meal|
+    meal.customer == self
+  end
+end
+
+def waiters
+  meals.map do |meal|
+    meal.waiter
+  end
+end
   
   def new_meal_20_percent(waiter, total)
     tip = total * 0.2 
